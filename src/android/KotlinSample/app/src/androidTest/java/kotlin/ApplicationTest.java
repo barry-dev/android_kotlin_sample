@@ -1,4 +1,4 @@
-package com.barry.sample.kotlin;
+package kotlin;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
