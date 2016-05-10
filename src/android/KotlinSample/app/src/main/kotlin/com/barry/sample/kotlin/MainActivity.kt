@@ -21,9 +21,7 @@ class MainActivity : AppCompatActivity() {
     btnHello?.setOnClickListener {
       val txtHello = findViewById(R.id.txt_hello) as TextView?
       val txtName = findViewById(R.id.txt_name) as EditText?
-      if (txtHello != null && txtName != null) {
-        txtHello.text = applyFormat(txtName.text.toString(), sayHello)
-      }
+      txtHello?.text = applyFormat(txtName?.text.toString(), sayHello)
     }
   }
 
