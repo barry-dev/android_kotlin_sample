@@ -8,6 +8,11 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
+  // Lambda Expression
+  val sayHello: (String) -> String = { text ->
+    String.format(getString(R.string.hello_sentence), text.capitalize())
+  }
+
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
@@ -17,8 +22,7 @@ class MainActivity : AppCompatActivity() {
       val txtHello = findViewById(R.id.txt_hello) as TextView?
       val txtName = findViewById(R.id.txt_name) as EditText?
       if (txtHello != null && txtName != null) {
-        val hello_sentence = String.format(getString(R.string.hello_sentence), txtName.text)
-        txtHello.text = hello_sentence
+        txtHello.text = sayHello(txtName.text.toString())
       }
     }
   }
