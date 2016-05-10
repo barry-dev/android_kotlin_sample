@@ -22,9 +22,13 @@ class MainActivity : AppCompatActivity() {
       val txtHello = findViewById(R.id.txt_hello) as TextView?
       val txtName = findViewById(R.id.txt_name) as EditText?
       if (txtHello != null && txtName != null) {
-        txtHello.text = sayHello(txtName.text.toString())
+        txtHello.text = applyFormat(txtName.text.toString(), sayHello)
       }
     }
+  }
+
+  fun applyFormat(text: String, f: (String) -> String): String {
+    return f(text)
   }
 }
 
