@@ -28,7 +28,11 @@ class MainActivity : AppCompatActivity() {
   }
 
   fun applyFormat(text: String, f: (String) -> String): String {
-    return f(text)
+    return f(text.makeImportant())
+  }
+
+  fun String.makeImportant(): String {
+    return this + "!!"
   }
 }
 
